@@ -141,6 +141,20 @@ files = [
 ]
 
 [[package]]
+name = "authlib"
+version = "1.6.8"
+description = "The ultimate Python library in building OAuth and OpenID Connect servers and clients."
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "authlib-1.6.8-py2.py3-none-any.whl", hash = "sha256:97286fd7a15e6cfefc32771c8ef9c54f0ed58028f1322de6a2a7c969c3817888"},
+    {file = "authlib-1.6.8.tar.gz", hash = "sha256:41ae180a17cf672bc784e4a518e5c82687f1fe1e98b0cafaeda80c8e4ab2d1cb"},
+]
+
+[package.dependencies]
+cryptography = "*"
+
+[[package]]
 name = "babel"
 version = "2.18.0"
 description = "Internationalization utilities"
@@ -425,22 +439,22 @@ files = [
 
 [[package]]
 name = "cognite-sdk"
-version = "7.91.1"
+version = "8.0.0b2"
 description = "Cognite Python SDK"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "cognite_sdk-7.91.1-py3-none-any.whl", hash = "sha256:858bcc8214eab5ab217ef2d7e25871bcf6b02e2b1b2171eb944f7809470ee5a3"},
-    {file = "cognite_sdk-7.91.1.tar.gz", hash = "sha256:5c945ae04ec7b71d0955611a2b1763ac2898dac180d263c41d7201a7ea78a924"},
+    {file = "cognite_sdk-8.0.0b2-py3-none-any.whl", hash = "sha256:a3da23341cba128a283e313e31598504f199a15679f4095e0c9472df1dfe0039"},
+    {file = "cognite_sdk-8.0.0b2.tar.gz", hash = "sha256:90fc88f2780b6188e55175377c7a4173f40a110d6a9514e09eaf5fd6632bb95c"},
 ]
 
 [package.dependencies]
+authlib = ">=1,<2"
+httpx = ">=0,<1"
 msal = ">=1.31,<2.0"
 packaging = ">=20"
 pandas = {version = ">=2.1", optional = true, markers = "extra == \"pandas\" or extra == \"all\""}
 protobuf = ">=4"
-requests = ">=2.27,<3.0"
-requests_oauthlib = ">=1,<2"
 typing_extensions = ">=4"
 
 [package.extras]
@@ -449,7 +463,7 @@ functions = ["pip (>=20.0.0)"]
 geo = ["geopandas (>=0.14)", "shapely (>=1.7.0)"]
 numpy = ["numpy (>=1.25)"]
 pandas = ["pandas (>=2.1)"]
-pyodide = ["pyodide-http (>=0.2.1,<0.3.0)", "tzdata (>=2024.1)"]
+pyodide = ["tzdata (>=2024.1)"]
 sympy = ["sympy"]
 yaml = ["PyYAML (>=6.0,<7.0)"]
 
@@ -1494,22 +1508,6 @@ files = [
 ]
 
 [[package]]
-name = "oauthlib"
-version = "3.3.1"
-description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "oauthlib-3.3.1-py3-none-any.whl", hash = "sha256:88119c938d2b8fb88561af5f6ee0eec8cc8d552b7bb1f712743136eb7523b7a1"},
-    {file = "oauthlib-3.3.1.tar.gz", hash = "sha256:0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"},
-]
-
-[package.extras]
-rsa = ["cryptography (>=3.0.0)"]
-signals = ["blinker (>=1.4.0)"]
-signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
-
-[[package]]
 name = "overrides"
 version = "7.7.0"
 description = "A decorator to automatically detect mismatch when overriding a method."
@@ -2103,24 +2101,6 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
-name = "requests-oauthlib"
-version = "1.3.1"
-description = "OAuthlib authentication support for Requests."
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-files = [
-    {file = "requests-oauthlib-1.3.1.tar.gz", hash = "sha256:75beac4a47881eeb94d5ea5d6ad31ef88856affe2332b9aafb52c6452ccf0d7a"},
-    {file = "requests_oauthlib-1.3.1-py2.py3-none-any.whl", hash = "sha256:2577c501a2fb8d05a304c09d090d6e47c306fef15809d102b327cf8364bddab5"},
-]
-
-[package.dependencies]
-oauthlib = ">=3.0.0"
-requests = ">=2.0.0"
-
-[package.extras]
-rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
-
-[[package]]
 name = "rfc3339-validator"
 version = "0.1.4"
 description = "A pure python RFC3339 validator"
@@ -2542,4 +2522,4 @@ test = ["pytest", "websockets"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "643fa9b94ea0b9931f9817d1c8537e57117299d2d8cf56dbc350de7d22f1ce01"
+content-hash = "696a0d4ea2b9f4b12c039b90fb8ff25d7a471c82b58432bfcf9cbb44a35a20ca"
